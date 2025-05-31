@@ -80,15 +80,19 @@
                     @endif
                     <div class="row align-items-md-stretch mt-4">
                         <div class="col">
-                            <div class="p-3 text-white bg-dark rounded-3">
-                                <h3>Welcome to Unifiedtransform!</h3>
+                            <!--<div class="p-3 text-white bg-dark rounded-3">
+                                <h3>Welcome to University Of The South Pacific!</h3>
                                 <p><i class="bi bi-emoji-heart-eyes"></i> Thanks for your love and support.</p>
+                            </div>-->
+                            <div class="p-3 text-white bg-dark rounded-3 text-center">
+                                <h3>Welcome to University Of The South Pacific!</h3>
+                                 <p><i class="bi bi-emoji-heart-eyes"></i> Thanks for your love and support.</p>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="p-3 bg-white border rounded-3" style="height: 100%;">
-                                <h3>Manage school better</h3>
-                                <p class="text-end">with <i class="bi bi-lightning"></i> <a href="https://github.com/changeweb/Unifiedtransform" target="_blank" style="text-decoration: none;">Unifiedtransform</a> <i class="bi bi-lightning"></i>.</p>
+                            <div class="p-3 bg-white border rounded-3 text-center" style="height: 100%;">
+                                <h3>Manage USP better with our system</h3>
+                                <p class="text-end text-center">Visit our repository for more information: <i class="bi bi-lightning"></i> <a href="https://github.com/MohammedNafizBeg/Assignment3CS415" target="_blank" style="text-decoration: none;">USP Management System</a> <i class="bi bi-lightning"></i>.</p>
                             </div>
                         </div>
                     </div>
