@@ -91,6 +91,20 @@
                                     </div>
 
                                     <div class="form-check">
+                                        <input class="form-check-input" {{ in_array('Graduation Pass', (array) $student_application->exam_type) ? 'checked' : '' }} type="checkbox" name="exam_type[]" id="graduation" value="Graduation">
+                                        <label class="form-check-label" for="graduation">
+                                            Graduation
+                                        </label>
+                                    </div>
+
+                                     <div class="form-check">
+                                        <input class="form-check-input" {{ in_array('Grades Recheck', (array) $student_application->exam_type) ? 'checked' : '' }} type="checkbox" name="exam_type[]" id="grades_recheck" value="Grades Recheck">
+                                        <label class="form-check-label" for="grades_recheck">
+                                            Grades Recheck
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
                                         <input class="form-check-input" {{ in_array('Special Examination', (array) $student_application->exam_type) ? 'checked' : '' }} type="checkbox" name="exam_type[]" id="special_exam" value="Special Examination">
                                         <label class="form-check-label" for="special_exam">
                                             Special Examination

@@ -61,6 +61,14 @@
                         </ul>
                     </li>
                     @endif
+                    @if (Auth::user()->role == "admin")
+                    <li class="nav-item">
+                         <a class="nav-link" href="http://127.0.0.1:5000/" target="_blank">
+                         <i class="bi bi-file-earmark-text"></i>
+                         <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">Transcript</span>
+                        </a>
+                    </li>
+@endif
                     @if(Auth::user()->role == "teacher")
                     <li class="nav-item">
                         <a class="nav-link {{ (request()->is('courses/teacher*') || request()->is('courses/assignments*'))? 'active' : '' }}" href="{{route('course.teacher.list.show', ['teacher_id' => Auth::user()->id])}}"><i class="bi bi-journal-medical"></i> <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">My Courses</span></a>

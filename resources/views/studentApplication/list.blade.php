@@ -46,7 +46,7 @@
                                         <th scope="col">Semester/Year</th>
                                         <th scope="col">Telephone</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Exam Type</th>
+                                        <th scope="col">Application Type</th>
                                         <th scope="col">Documents</th>
                                         @if(Auth::user()->role != "student")
                                         <th scope="col">Status</th>
@@ -73,7 +73,7 @@
                                                     <a href="{{ asset('storage/'.$document) }}" target="_blank">{{ basename($document) }}</a>
                                                     <br>
                                                 @endforeach
-                                            </td>
+                                             </td>
                                             @if(Auth::user()->role != "student")
                                             <td>
                                                 <div class="col-md-6" style="width: 140px !important;">
