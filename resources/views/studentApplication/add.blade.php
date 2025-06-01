@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputAddress" class="form-label">Address<sup></sup></label>
-                                    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="634 Main St" required value="{{old('address')}}">
+                                    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Lot 64, Vatuwaqa" required value="{{old('address')}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="campus" class="form-label">Campus<sup></sup></label>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPhone" class="form-label">Phone<sup></sup></label>
-                                    <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="+880 01......" required value="{{old('phone')}}">
+                                    <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="+679" required value="{{old('phone')}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email<sup></sup></label>
@@ -88,6 +88,20 @@
                                         <input class="form-check-input" type="checkbox" name="exam_type[]" id="aegrotat" value="Aegrotat Pass">
                                         <label class="form-check-label" for="aegrotat">
                                             Aegrotat Pass
+                                        </label>
+                                    </div>
+
+                                     <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exam_type[]" id="graduation" value="Graduation">
+                                        <label class="form-check-label" for="graduation">
+                                            Graduation
+                                        </label>
+                                    </div>
+
+                                     <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exam_type[]" id="grades_recheck" value="Grades Recheck">
+                                        <label class="form-check-label" for="grades_recheck">
+                                            Grades Recheck
                                         </label>
                                     </div>
 
