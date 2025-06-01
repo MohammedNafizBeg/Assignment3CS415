@@ -73,6 +73,11 @@ Route::middleware(['auth'])->group(function () {
         // Student
         Route::post('student/create', [UserController::class, 'storeStudent'])->name('student.create');
         Route::post('student/update', [UserController::class, 'updateStudent'])->name('student.update');
+
+        // Student
+        Route::post('student/application/create', [\App\Http\Controllers\StudentApplicationController::class, 'storeStudentApplication'])->name('student.application.create');
+        Route::post('/student-applications/update-status', [\App\Http\Controllers\StudentApplicationController::class, 'updateStatus']);
+        Route::post('/student/application/update', [\App\Http\Controllers\StudentApplicationController::class, 'updateStudentApplication'])->name('student.application.update');
     });
 
 
@@ -105,6 +110,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/students/view/profile/{id}', [UserController::class, 'showStudentProfile'])->name('student.profile.show');
     Route::get('/students/view/attendance/{id}', [AttendanceController::class, 'showStudentAttendance'])->name('student.attendance.show');
 
+    Route::get('/student/application', [\App\Http\Controllers\StudentApplicationController::class, 'createApplication'])->name('student.application.create');
+    Route::get('/student/application/view/list', [\App\Http\Controllers\StudentApplicationController::class, 'getStudentApplicationList'])->name('student.application.list.show');
+    Route::get('/student/application/edit/{id}', [\App\Http\Controllers\StudentApplicationController::class, 'editStudentApplication'])->name('student.application.edit.show');
     // Marks
     Route::get('/marks/create', [MarkController::class, 'create'])->name('course.mark.create');
     Route::post('/marks/store', [MarkController::class, 'store'])->name('course.mark.store');
