@@ -43,7 +43,7 @@
                 </div>
             @endif
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+          <!--  <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0" style="align-items: center;">
                     <h1 class="text-gray-900 dark:text-white"><img src="{{asset('favicon_io/android-chrome-512x512.png')}}" class="mr-2" height="50px" width="50px"><span style="font-size: 45px; color: #8a6dd9;">nifiedtransform</span> - <small>Powered by &nbsp;</small></h1>
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
@@ -53,7 +53,32 @@
                     </svg>
                     <span class="ml-4" style="font-size: 50px; color:#1a202c;">+</span>
                     <img class="ml-4" src="{{asset('bootstrap-5-1.svg')}}" height="70" alt="Bootstrap 5">
-                </div>
+                </div> -->
+
+                <!--BOC added by Nafiz -->
+<!-- Container -->
+<div class="min-h-screen flex flex-col items-center justify-center bg-white space-y-6">
+
+    <!-- USP Logo Centered -->
+    <!--<div>
+        <img src="{{ asset('favicon_io/android-chrome-512x512.png') }}" alt="USP Logo" class="mx-auto" style="height: 100px; width: auto;">
+    </div>-->
+
+    <!-- Title and Tagline Centered -->
+    <div class="text-center">
+         <img src="{{ asset('favicon_io/homepagelogo.png') }}" alt="USP Logo" class="mx-auto" style="height: 200px; width: 300px;">
+         <h1 class="text-4xl font-bold" style="color: #008C95;">University of the South Pacific</h1>
+         <p class="text-lg" style="color: #002432;">Official Management System</p>
+    </div>
+
+    <!-- Powered By Bootstrap Section -->
+    <!--<div class="flex items-center text-sm text-gray-600">
+        <span>Built with</span>
+        <img src="{{ asset('bootstrap-5-1.svg') }}" alt="Bootstrap 5" class="ml-2" style="height: 30px; width: auto;">
+    </div>-->
+
+</div>
+                <!--EOC added by Nafiz -->
 
                 {{-- <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
@@ -132,9 +157,9 @@
                         </div>
                     </div> --}}
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+                    <!--<div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) . Bootstrap 5.x
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
