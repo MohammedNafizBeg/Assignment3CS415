@@ -38,6 +38,17 @@
                             @endif
                         </ul>
                     </li>
+                        <li class="nav-item">
+                            <a type="button" href="#studentApplicaion-submenu" data-bs-toggle="collapse" class="d-flex nav-link {{ request()->is('student/application*')? 'active' : '' }}"><i class="bi bi-person-lines-fill"></i> <span class="ms-2 d-inline d-sm-none d-md-none d-xl-inline">Student Application</span>
+                                <i class="ms-auto d-inline d-sm-none d-md-none d-xl-inline bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="nav collapse {{ request()->is('students*')? 'show' : 'hide' }} bg-white" id="studentApplicaion-submenu">
+                                <li class="nav-item w-100" {{ request()->routeIs('student.application.create')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('student.application.create')}}"><i class="bi bi-person-video2 me-2"></i> Create Application</a></li>
+{{--                                @if (!session()->has('browse_session_id') && Auth::user()->role == "admin")--}}
+                                    <li class="nav-item w-100" {{ request()->routeIs('student.application.list.show')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('student.application.list.show')}}"><i class="bi bi-person-plus me-2"></i> View Application</a></li>
+{{--                                @endif--}}
+                            </ul>
+                        </li>
                     <li class="nav-item">
                         <a type="button" href="#teacher-submenu" data-bs-toggle="collapse" class="d-flex nav-link {{ request()->is('teachers*')? 'active' : '' }}"><i class="bi bi-person-lines-fill"></i> <span class="ms-2 d-inline d-sm-none d-md-none d-xl-inline">Teachers</span>
                             <i class="ms-auto d-inline d-sm-none d-md-none d-xl-inline bi bi-chevron-down"></i>
@@ -50,14 +61,34 @@
                         </ul>
                     </li>
                     @endif
+                    @if (Auth::user()->role == "admin")
+                    <li class="nav-item">
+                         <a class="nav-link" href="http://127.0.0.1:5000/" target="_blank">
+                         <i class="bi bi-file-earmark-text"></i>
+                         <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">Transcript</span>
+                        </a>
+                    </li>
+@endif
                     @if(Auth::user()->role == "teacher")
                     <li class="nav-item">
                         <a class="nav-link {{ (request()->is('courses/teacher*') || request()->is('courses/assignments*'))? 'active' : '' }}" href="{{route('course.teacher.list.show', ['teacher_id' => Auth::user()->id])}}"><i class="bi bi-journal-medical"></i> <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">My Courses</span></a>
                     </li>
                     @endif
                     @if(Auth::user()->role == "student")
+                        <li class="nav-item">
+                            <a type="button" href="#studentApplicaion-submenu" data-bs-toggle="collapse" class="d-flex nav-link {{ request()->is('student/application*')? 'active' : '' }}"><i class="bi bi-person-lines-fill"></i> <span class="ms-2 d-inline d-sm-none d-md-none d-xl-inline">Student Application</span>
+                                <i class="ms-auto d-inline d-sm-none d-md-none d-xl-inline bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="nav collapse {{ request()->is('students*')? 'show' : 'hide' }} bg-white" id="studentApplicaion-submenu">
+                                <li class="nav-item w-100" {{ request()->routeIs('student.application.create')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('student.application.create')}}"><i class="bi bi-person-video2 me-2"></i> Create Application</a></li>
+                                {{--                                @if (!session()->has('browse_session_id') && Auth::user()->role == "admin")--}}
+                                <li class="nav-item w-100" {{ request()->routeIs('student.application.list.show')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('student.application.list.show')}}"><i class="bi bi-person-plus me-2"></i> View Application</a></li>
+                                {{--                                @endif--}}
+                            </ul>
+                        </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('student.attendance.show')? 'active' : '' }}" href="{{route('student.attendance.show', ['id' => Auth::user()->id])}}"><i class="bi bi-calendar2-week"></i> <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">Attendance</span></a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('course.student.list.show')? 'active' : '' }}" href="{{route('course.student.list.show', ['student_id' => Auth::user()->id])}}"><i class="bi bi-journal-medical"></i> <span class="ms-1 d-inline d-sm-none d-md-none d-xl-inline">Courses</span></a>
                     </li>
@@ -73,10 +104,11 @@
                         @php
                             if (session()->has('browse_session_id')){
                                 $class_info = \App\Models\Promotion::where('session_id', session('browse_session_id'))->where('student_id', Auth::user()->id)->first();
-                            } else {
+                            }
+                            else {
                                 $latest_session = \App\Models\SchoolSession::latest()->first();
                                 if($latest_session) {
-                                    $class_info = \App\Models\Promotion::where('session_id', $latest_session->id)->where('student_id', Auth::user()->id)->first();
+                                    $class_info = \App\Models\Promotion::where('student_id', Auth::user()->id)->first();
                                 } else {
                                     $class_info = [];
                                 }
